@@ -7,7 +7,7 @@ words = 'one two three four five six seven eight nine'.split()
 # Reversed version of the words list
 words_reversed = [word[::-1] for word in words]
 
-def extract_nums(line: str):
+def calibration_value(line: str) -> int:
     # Extract the first digit from the line using the words list
     first_digit = extract_digit(line, words)
     # Reverse the line for finding the last digit
@@ -42,4 +42,4 @@ def extract_digit(line: str, words: list[str]):
     return found_digit
 
 # Read lines from the file, extract numbers from each line, and sum them up
-print(sum(extract_nums(line) for line in get_lines('../data/1.txt')))
+print(sum(calibration_value(line) for line in get_lines('../data/1.txt')))
